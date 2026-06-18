@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Calc</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <div class="display-wrapper">
+    <div class="display-mode" id="mode">DEG</div>
+    <div class="display-expr" id="expr"></div>
+    <div class="display-result" id="result">0</div>
+  </div>
+
+  <div class="keypad">
+    <div class="row row-6">
+      <button class="btn btn-shift" id="shiftBtn" onclick="toggleShift()">Shift</button>
+      <button class="btn btn-op btn-special" onclick="insertAns()">Ans</button>
+      <button class="btn btn-op" onclick="insert('(')"> ( </button>
+      <button class="btn btn-op" onclick="insert(')')"> ) </button>
+      <button class="btn btn-clr" onclick="clearAll()">CLR</button>
+      <button class="btn btn-del" onclick="deleteLast()">Del</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-fn" onclick="insertFn('sin')">sin</button>
+      <button class="btn btn-fn" onclick="insertFn('cos')">cos</button>
+      <button class="btn btn-fn" onclick="insertFn('tan')">tan</button>
+      <button class="btn btn-fn" onclick="insertFn('ln')">ln</button>
+      <button class="btn btn-fn" onclick="insertFn('log')">log</button>
+      <button class="btn btn-fn" onclick="insertFn('√')">√</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-fn" onclick="insertFn('sin⁻¹')" style="font-size:10px;">sin<sup>-1</sup></button>
+      <button class="btn btn-fn" onclick="insertFn('cos⁻¹')" style="font-size:10px;">cos<sup>-1</sup></button>
+      <button class="btn btn-fn" onclick="insertFn('tan⁻¹')" style="font-size:10px;">tan<sup>-1</sup></button>
+      <button class="btn btn-fn" onclick="insert('x²')" style="font-size:13px;">x²</button>
+      <button class="btn btn-fn" onclick="insert('^')">x^y</button>
+      <button class="btn btn-fn" onclick="insert('!')">!</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-num" onclick="insert('7')">7</button>
+      <button class="btn btn-num" onclick="insert('8')">8</button>
+      <button class="btn btn-num" onclick="insert('9')">9</button>
+      <button class="btn btn-op" onclick="insert('÷')">÷</button>
+      <button class="btn btn-fn btn-const" onclick="insert('π')">π</button>
+      <button class="btn btn-fn btn-const" onclick="insert('e')">e</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-num" onclick="insert('4')">4</button>
+      <button class="btn btn-num" onclick="insert('5')">5</button>
+      <button class="btn btn-num" onclick="insert('6')">6</button>
+      <button class="btn btn-op" onclick="insert('×')">×</button>
+      <button class="btn btn-fn btn-special" onclick="storeAns()" style="font-size:11px;">Ans→</button>
+      <button class="btn btn-fn" onclick="insert('mod')">Mod</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-num" onclick="insert('1')">1</button>
+      <button class="btn btn-num" onclick="insert('2')">2</button>
+      <button class="btn btn-num" onclick="insert('3')">3</button>
+      <button class="btn btn-op" onclick="insert('-')">-</button>
+      <button class="btn btn-fn btn-special" onclick="insertExp()" style="font-size:12px;">Exp</button>
+      <button class="btn btn-fn btn-const" onclick="insert('i')" style="font-style:italic;">i</button>
+    </div>
+
+    <div class="row row-6">
+      <button class="btn btn-num" onclick="insert('0')">0</button>
+      <button class="btn btn-num" onclick="insert('.')">.</button>
+      <button class="btn btn-op" onclick="negate()" style="font-size:13px;">+/-</button>
+      <button class="btn btn-op" onclick="insert('+')">+</button>
+      <button class="btn btn-eq" onclick="calculate()">=</button>
+      <button class="btn btn-fn" onclick="toggleDRG()" style="font-size:11px;" id="drgBtn">DRG</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
